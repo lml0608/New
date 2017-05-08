@@ -90,7 +90,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((ImageAdapterViewHolder) holder).mIndicator.onPageSelected(0);//默认让第一个选中，解决页面销毁后重新初始化时，mIndicator仍然保留上次圆点位置的bug
         }
         if (holder instanceof NewsAdapterViewHolder) {
-            NewsData newsData = mNewTabBean.data.news.get(position);
+            NewsData newsData = mNewTabBean.data.news.get(position - 1);
             Picasso.with(mContext)
                     .load(newsData.listimage)
                     .placeholder(R.drawable.topnews_item_default)
